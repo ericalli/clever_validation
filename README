@@ -1,0 +1,66 @@
+CleverValidation
+================
+
+CleverValidation is an extension to the existing rails validation methods that includes the ability to customize your validation error messages and features some javascript functionality for adding a bit of interaction to your validations via scriptaculous effects.
+
+
+Example
+=======
+
+Use this plugin in the exact manner you would use the default error_messages_for method. A basic example would be:
+
+<%= cleaver_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
+										      :sub_title => "The errors in question are listed below...", 
+										      :effect => "pulsate" %>
+										
+This will display the error messages and a "show me" link next to each error, when clicked, it will scroll a user to the field in question and do the defined effect to it (in this case Effect.pulsate).
+
+The available effects are:
+
+- Pulsate
+- Shake
+- Highlight
+	- highlight_color
+	- duration
+	
+An example with the highlight effect would be:
+
+<%= cleaver_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
+										      :sub_title => "The errors in question are listed below...", 
+										      :effect => "highlight",
+										 	  :highlight_color => "eaeaea", 
+											  :duration => 8 %>
+
+NOTE: I've overwritten the default rails validation messages for the model validation methods, so you will need to completely define your messages (which, I think would be preferred). Such as:
+
+validates_presence_of :file_name, :message => "This filed can't be blank."
+
+So the error will appear exactly as: "This filed can't be blank."
+
+
+Basic CSS Styles:
+=================
+
+Here are some basic styles to get your started. Place these into your CSS stylesheet and tweak them as you wish.
+
+div#cleaverValidation {
+    background: #FFFF99;
+	padding: 10px;
+	position: relative;
+}
+div#cleaverValidation ul{
+	list-style:none;
+}
+div#cleaverValidation a#hideLink {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+div#cleaverValidation a#showMeLink {}
+
+
+Credits
+=======
+
+Copyright (c) 2008 Eric A. released under the MIT license
+http://from.two2twelve.com
