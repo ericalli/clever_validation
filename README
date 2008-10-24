@@ -33,9 +33,9 @@ An example with the highlight effect would be:
 
 NOTE: I've overwritten the default rails validation messages for the model validation methods, so you will need to completely define your messages (which, I think would be preferred). Such as:
 
-validates_presence_of :file_name, :message => "This filed can't be blank."
+validates_presence_of :file_name, :message => "This field can't be blank."
 
-So the error will appear exactly as: "This filed can't be blank."
+So the error will appear exactly as: "This fieled can't be blank."
 
 
 Basic CSS Styles:
