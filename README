@@ -1,7 +1,7 @@
-CleverValidation
-================
+CleverValidation v0.1
+=====================
 
-CleverValidation is an extension to the existing rails validation methods that includes the ability to customize your validation error messages and features some javascript functionality for adding a bit of interaction to your validations via scriptaculous effects.
+CleverValidation is an extension to the existing rails validation methods that includes the ability to customize your validation error messages and features javascript functionality for adding a bit of interaction to your validations via scriptaculous effects.
 
 
 Example
@@ -9,7 +9,7 @@ Example
 
 Use this plugin in the exact manner you would use the default error_messages_for method. A basic example would be:
 
-<%= cleaver_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
+<%= clever_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
 										      :sub_title => "The errors in question are listed below...", 
 										      :effect => "pulsate" %>
 										
@@ -25,7 +25,7 @@ The available effects are:
 	
 An example with the highlight effect would be:
 
-<%= cleaver_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
+<%= clever_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
 										      :sub_title => "The errors in question are listed below...", 
 										      :effect => "highlight",
 										 	  :highlight_color => "eaeaea", 
@@ -43,20 +43,20 @@ Basic CSS Styles:
 
 Here are some basic styles to get your started. Place these into your CSS stylesheet and tweak them as you wish.
 
-div#cleaverValidation {
+div#cleverValidation {
     background: #FFFF99;
 	padding: 10px;
 	position: relative;
 }
-div#cleaverValidation ul{
+div#cleverValidation ul{
 	list-style:none;
 }
-div#cleaverValidation a#hideLink {
+div#cleverValidation a#hideLink {
 	position: absolute;
 	top: 10px;
 	right: 10px;
 }
-div#cleaverValidation a#showMeLink {}
+div#cleverValidation a#showMeLink {}
 
 
 Credits

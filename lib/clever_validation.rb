@@ -1,5 +1,5 @@
 module CleverValidation
-  def cleaver_validation_for(*params)
+  def clever_validation_for(*params)
      options = params.extract_options!.symbolize_keys
      if object = options.delete(:object)
        objects = [object].flatten
@@ -14,7 +14,7 @@ module CleverValidation
            value = options[key]
            html[key] = value unless value.blank?
          else
-           html[key] = 'cleaverValidation'
+           html[key] = 'cleverValidation'
          end
        end
        options[:object_name] ||= params.first
