@@ -45,7 +45,7 @@ module CleverValidation
        contents << content_tag(options[:header_tag] || :h3, options[:title]) unless options[:title].blank?
        contents << content_tag(:p, options[:sub_title]) unless options[:sub_title].blank?
        contents << content_tag(:ul, error_messages)
-       contents << link_to("Hide", "javascript:void(0);", {:onclick=>"Element.hide('cleaverValidation');", :id=> "hideLink"})
+       contents << link_to("Hide", "javascript:void(0);", {:onclick=>"Element.hide('cleverValidation');", :id=> "hideLink"})
 
        content_tag(:div, contents, html)
      else
