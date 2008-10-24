@@ -35,7 +35,7 @@ NOTE: I've overwritten the default rails validation messages for the model valid
 
 validates_presence_of :file_name, :message => "This field can't be blank."
 
-So the error will appear exactly as: "This fieled can't be blank."
+So the error will appear exactly as: "This field can't be blank."
 
 
 Basic CSS Styles:
