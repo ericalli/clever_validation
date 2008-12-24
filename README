@@ -35,13 +35,13 @@ NOTE: I've overwritten the default rails validation messages for the model valid
 
 validates_presence_of :file_name, :message => "This field can't be blank."
 
-So the error will appear exactly as: "This field can't be blank."
+This way the error will appear exactly as: "This field can't be blank."
 
 
 Basic CSS Styles:
 =================
 
-Here are some basic styles to get your started. Place these into your CSS stylesheet and tweak them as you wish.
+Here are some basic styles to get you started. Place these into your CSS stylesheet and tweak them as you wish.
 
 div#cleverValidation {
     background: #FFFF99;
@@ -64,3 +64,4 @@ Credits
 
 Copyright (c) 2008 Eric A. released under the MIT license
 http://from.two2twelve.com
+http://plugins.two2twelve.com
