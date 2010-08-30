@@ -1,67 +1,107 @@
-CleverValidation v0.1
+CleverValidation v1.0
 =====================
 
-CleverValidation is an extension to the existing rails validation methods that includes the ability to customize your validation error messages and features javascript functionality for adding a bit of interaction to your validations via scriptaculous effects.
+CleverValidation is an extension to the existing rails validation methods that includes the ability to customize your validation error messages and features javascript functionality for adding interaction to your validations via jquery or scriptaculous effects.
+
+Currently requires Rails >= 2.3.5. Rails 3.0 compatibility will be coming soon (feel free to contribute!).
 
 
 Example
 =======
 
-Use this plugin in the exact manner you would use the default error_messages_for method. A basic example would be:
+A working demo of CleverValidation can be found here: http://plugins.two2twelve.com/plugins/clever_validation/
 
-<%= clever_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
-										      :sub_title => "The errors in question are listed below...", 
-										      :effect => "pulsate" %>
-										
-This will display the error messages and a "show me" link next to each error, when clicked, it will scroll a user to the field in question and do the defined effect to it (in this case Effect.pulsate).
 
-The available effects are:
+How It Works
+============
 
-- Pulsate
-- Shake
-- Highlight
-	- highlight_color
-	- duration
-	
-An example with the highlight effect would be:
+CleverValidation works in the exact manner as the default error_messages_for method but adds UI interaction via javascript effects by display the error messages and a "show me" link next to each error. When clicked, CleverValidation scrolls the user's browser to the field with the error and highlights it with an effect of your choosing.
 
-<%= clever_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
+CleverValidation also overwrites the default rails validation messages for the model validation methods, so you can now completely define your messages for each field instead of being stuck with the Rails standard prefixes.
+
+
+How To Use It
+=============
+
+Here's a basic example of CleverValidation. Use this instead of error_messages_for.
+
+<%= clever_validation_for 'your_model_name',  :title => "Sorry, we encountered some errors during your submission.", 
 										      :sub_title => "The errors in question are listed below...", 
 										      :effect => "highlight",
-										 	  :highlight_color => "eaeaea", 
-											  :duration => 8 %>
+										 	  :highlight_color => "FFF000", 
+											  :duration => 2 %>
 
-NOTE: I've overwritten the default rails validation messages for the model validation methods, so you will need to completely define your messages (which, I think would be preferred). Such as:
+An example of how you would define validation methods in your models with CleverValidation would be:
 
-validates_presence_of :file_name, :message => "This field can't be blank."
+validates_presence_of :file_name, :message => "The message field can't be blank."
 
-This way the error will appear exactly as: "This field can't be blank."
+This way the error message will appear exactly as: "The message field can't be blank."
 
 
-Basic CSS Styles:
-=================
+Options
+=======
+
+CleverValidation has one optional global configuration variable that allows you to define what Javascript library it should use.
+
+CleverValidation.config[:js_library] = "jquery"
+
+This variable can be placed in an initializer and can be set up either "jquery" or "prototype".
+
+
+The available options for clever_validation_for are:
+
+
+title: The title for the error message box
+sub_title: The sub title for the error message box
+show_me_text: The title of the link to trigger effect
+effect: The effect to be used on the field with errors
+	- Pulsate
+	- Shake
+	- Highlight
+highlight_color: The color to highlight a field (only valid when effect is "highlight")	
+duration: The duration that the effect should last
+
+
+Basic CSS Styles
+================
 
 Here are some basic styles to get you started. Place these into your CSS stylesheet and tweak them as you wish.
 
-div#cleverValidation {
-    background: #FFFF99;
-	padding: 10px;
+div#clever_validation {
+	margin-top: 20px;
+	background: #eaeaea;
+	padding: 15px;
 	position: relative;
+	-moz-border-radius: 8px;
 }
-div#cleverValidation ul{
-	list-style:none;
+div#clever_validation h3{
+	margin-bottom: 10px;
+	color: #272727;
+	font-size: 15px;
 }
-div#cleverValidation a#hideLink {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-div#cleverValidation a#showMeLink {}
-
-
+	div#clever_validation a { 
+		background: #aaa;
+		padding: 1px 3px 1px 3px; 
+		-moz-border-radius: 4px; 
+		color: #fff; 
+		border: none;
+	}
+	div#clever_validation ul{
+		padding: 10px 0px 0px 15px;
+		color: #666666;
+		line-height: 22px;
+	}
+		div#clever_validation a:hover { text-decoration: none; background: #666; }
+		div#clever_validation a#hide_link {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			font-weight: bold;
+		}
+		
 Credits
 =======
 
-Copyright (c) 2008 Eric A. released under the MIT license
+Copyright (c) 2010 Eric Alli released under the MIT license
 http://from.two2twelve.com
-http://plugins.two2twelve.com
+http://code.two2twelve.com
