@@ -26,10 +26,10 @@ How To Use It
 Here's a basic example of CleverValidation. Use this instead of error_messages_for.
 
 <%= clever_validation_for 'your_model_name', :title => "Sorry, we encountered some errors during your submission.", 
-	:sub_title => "The errors in question are listed below...", 
-	:effect => "highlight",
-	:highlight_color => "FFF000", 
-	:duration => 2 %>
+						:sub_title => "The errors in question are listed below...", 
+						:effect => "highlight",
+						:highlight_color => "FFF000", 
+						:duration => 2 %>
 
 An example of how you would define validation methods in your models with CleverValidation would be:
 
